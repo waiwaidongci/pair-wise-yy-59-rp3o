@@ -185,6 +185,119 @@ button { cursor: pointer; }
 .batch-summary dd { margin: 0; font-weight: 700; font-size: 12px; }
 .summary-note { display: flex; gap: 7px; color: #8d5816; font-size: 11px; padding: 11px; background: #fff5e4; border-radius: 4px; margin-top: 14px; }
 .muted { color: #79858f; font-size: 12px; }
+.danger-text { color: var(--red) !important; }
+
+/* ---------- 顶栏：操作人切换 ---------- */
+.user-switcher { display: flex; align-items: center; gap: 6px; background: #223241; border: 1px solid #3a4c5c; border-radius: 6px; padding: 4px 6px 4px 9px; color: #b9c7d3; }
+.user-switcher select { background: transparent; border: 0; color: #e8eef4; font-size: 11px; max-width: 196px; outline: none; }
+.user-switcher select option { color: #17202b; }
+.user-switcher .reset-btn { color: #9db0c0; padding: 0 5px; height: 26px; }
+
+/* ---------- 通知 Toast ---------- */
+.toast { position: fixed; right: 22px; bottom: 22px; z-index: 100; max-width: 430px; display: flex; align-items: flex-start; gap: 9px; padding: 13px 15px; border-radius: 8px; font-size: 12px; line-height: 1.5; box-shadow: 0 14px 44px rgba(15,20,25,.25); background: white; border: 1px solid var(--line); border-left: 4px solid var(--blue); }
+.toast.ok { border-left-color: var(--green); }
+.toast.deny { border-left-color: var(--red); }
+.toast.info { border-left-color: #b98020; }
+.toast > svg { flex: none; margin-top: 2px; }
+.toast.ok > svg { color: var(--green); }
+.toast.deny > svg { color: var(--red); }
+.toast.info > svg { color: #b98020; }
+.toast button { margin-left: 4px; border: 0; background: transparent; color: #93a0ab; flex: none; }
+
+/* ---------- 文档集：锁定行与审计账 ---------- */
+.locked-row { background: #faf6f6; }
+.locked-row .file-icon { background: #f2e3e3; color: #a33c3c; }
+.denied-btn { color: var(--red) !important; border-color: #e4c4c4 !important; }
+.audit-list { max-height: 360px; overflow: auto; }
+.audit-card p { position: relative; padding: 10px 0 6px; }
+.audit-card .audit-line { display: block; font-size: 11px; color: #34404a; margin: 4px 0 2px; }
+.audit-card p small { display: block; font-size: 10px; color: #8a959f; line-height: 1.5; margin: 0; }
+.audit-card .badge { position: absolute; right: 0; top: 10px; }
+.audit-card p.audit-deny { background: #fdf3f3; border-radius: 5px; padding-left: 9px; padding-right: 9px; }
+.audit-card p.audit-system { background: #fdf8ee; border-radius: 5px; padding-left: 9px; padding-right: 9px; }
+
+/* ---------- 拒绝面板 ---------- */
+.denied-page { display: grid; place-items: center; min-height: calc(100vh - 160px); }
+.denied-card { max-width: 560px; padding: 38px 34px; text-align: center; }
+.denied-card > svg { color: var(--red); margin-bottom: 12px; }
+.denied-card h1 { font-size: 20px; margin: 0 0 10px; }
+.denied-card p { font-size: 13px; line-height: 1.7; color: #5d6973; margin: 6px 0; }
+.denied-actions { margin-top: 18px; display: flex; justify-content: center; }
+
+/* ---------- 审阅页：依据条 ---------- */
+.basis-strip { display: grid; grid-template-columns: 120px 1fr 150px minmax(240px, 1.2fr); border-bottom: 1px solid var(--line); background: #fff; }
+.basis-strip > div { padding: 9px 16px; border-right: 1px solid #edf0f2; }
+.basis-strip span { display: block; font-size: 9px; letter-spacing: .08em; color: #8a959f; text-transform: uppercase; }
+.basis-strip strong { display: block; font-size: 11px; margin-top: 4px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.basis-strip .basis-ok strong { color: var(--green); }
+.basis-strip .basis-deny strong { color: var(--red); }
+.basis-signatures { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.basis-signatures.stale { opacity: .72; }
+.sig-row { display: flex; gap: 8px; align-items: flex-start; padding: 7px 0; border-top: 1px solid #f0f2f4; }
+.sig-row > svg { color: var(--green); margin-top: 2px; flex: none; }
+.sig-row strong, .sig-row small { display: block; font-size: 11px; }
+.sig-row small { color: #84909a; margin-top: 2px; line-height: 1.5; }
+.stale .sig-row > svg { color: var(--red); }
+
+/* ---------- 复核页 ---------- */
+.doc-chooser { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.doc-chooser button { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: white; border-radius: 999px; padding: 7px 12px; font-size: 11px; color: #4c5863; }
+.doc-chooser button.active { border-color: var(--blue); background: var(--blue-soft); color: var(--blue); font-weight: 700; }
+.quality-bottom-wide { grid-template-columns: minmax(0, 1fr) 430px; }
+.conclusion-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; background: #f0f2f4; border-radius: 6px; padding: 4px; margin: 12px 0; }
+.conclusion-switch button { border: 0; background: transparent; border-radius: 4px; padding: 8px; font-size: 12px; color: #66727d; font-weight: 650; }
+.conclusion-switch button.active { background: white; color: var(--green); box-shadow: 0 1px 4px rgba(30,45,60,.12); }
+.conclusion-switch button.active.reject { color: var(--red); }
+.review-note { width: 100%; border: 1px solid #cfd6dc; border-radius: 5px; padding: 9px 10px; font-size: 12px; min-height: 74px; resize: vertical; }
+.invalid-banner { display: flex; gap: 8px; align-items: center; background: #fdebec; color: #973036; border: 1px solid #f0c9cb; border-radius: 5px; font-size: 11px; line-height: 1.55; padding: 9px 11px; margin-bottom: 12px; }
+.decision-actions-single { grid-template-columns: 1fr !important; margin-top: 10px; }
+.attach-region { display: flex !important; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--line); margin-top: 10px; padding-top: 13px; font-size: 11px; color: #59656f; }
+.attach-region select { margin-left: auto; border: 1px solid #cfd6dc; border-radius: 4px; min-height: 30px; font-size: 11px; padding: 4px; }
+.accepted-box { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 10px; }
+.warn-small { color: var(--amber); display: block; margin-top: 6px; }
+
+/* ---------- 待裁决账 ---------- */
+.arbitration-card { margin-top: 14px; padding: 15px; }
+.arb-entry { border: 1px solid #f0dcb4; background: #fffaf1; border-radius: 6px; padding: 13px 14px; margin-top: 10px; }
+.arb-entry.resolved { border-color: var(--line); background: #fafbfc; opacity: .85; }
+.arb-head { display: flex; justify-content: space-between; align-items: center; }
+.arb-head strong { font-size: 12px; }
+.arb-entry small { color: #8a959f; font-size: 10px; display: block; margin-top: 4px; }
+.arb-entry p { font-size: 12px; color: #43505b; line-height: 1.6; margin: 7px 0 0; }
+.arb-region { display: flex; gap: 6px; align-items: center; color: #8a5c19 !important; }
+.arb-rule { margin-top: 10px; }
+.arb-rule input { width: 100%; border: 1px solid #cfd6dc; border-radius: 4px; min-height: 33px; padding: 7px 9px; font-size: 12px; }
+.arb-actions { display: grid; grid-template-columns: 1.2fr 1fr; gap: 7px; margin-top: 8px; }
+
+/* ---------- 批次页 ---------- */
+.batch-list button { position: relative; }
+.batch-list .badge { position: absolute; right: 8px; bottom: 9px; }
+.batch-row-rich { grid-template-columns: 22px minmax(0, 1.2fr) auto 30px !important; gap: 12px; }
+.batch-doc-main strong, .batch-doc-main span { display: block; }
+.batch-doc-main span { font-size: 10px; color: #7b8790; margin-top: 4px; }
+.batch-badges { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
+.batch-row-actions { display: grid; place-items: center; }
+.done-icon { color: var(--green); }
+.mini-remove { border: 0; background: transparent; color: #a0aab3; border-radius: 4px; padding: 4px; }
+.mini-remove:hover { color: var(--red); background: #fdebec; }
+.add-docs { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px; }
+.add-doc-list { display: flex; flex-wrap: wrap; gap: 7px; }
+.add-doc-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px dashed #c3ccd4; background: #fafbfc; border-radius: 999px; padding: 7px 11px; font-size: 11px; color: #4c5863; }
+.add-doc-chip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
+.export-console { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px; }
+.export-line { display: flex; gap: 8px; align-items: center; font-size: 12px; padding: 9px 12px; border-radius: 5px; background: #f3f5f7; color: #59656f; }
+.export-line.green { background: #e9f6f0; color: #1c6a4f; }
+.export-line.red { background: #fdebec; color: #9c2f35; }
+.export-line.blue { background: var(--blue-soft); color: #245bb9; }
+.export-progress { margin-top: 10px; height: 6px; }
+.export-controls { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.fault-toggle { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #7a858f; }
+.fault-toggle select { border: 1px solid #cfd6dc; border-radius: 4px; min-height: 30px; font-size: 11px; padding: 3px; }
+.info-note { color: #2e5c92 !important; background: #eef4fc !important; border-color: #c9dbf3 !important; }
+.dlg-label { display: block; font-size: 11px; color: #68747e; margin: 12px 0; }
+.dlg-label select, .dlg-label textarea { width: 100%; margin-top: 6px; }
+.dialog-btn-row { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.summary-note { align-items: flex-start; }
 
 @media (max-width: 1100px) {
   .document-row { grid-template-columns: 38px minmax(200px, 1fr) 88px 80px 72px; }
@@ -225,4 +338,10 @@ button { cursor: pointer; }
   .pdf-page { width: 720px; max-width: none; }
   .inspector { display: block; }
   .batch-summary { grid-column: auto; }
+  .basis-strip { grid-template-columns: 1fr 1fr; }
+  .quality-bottom-wide { grid-template-columns: 1fr; }
+  .batch-row-rich { grid-template-columns: 22px minmax(0, 1fr) 30px !important; }
+  .batch-badges { justify-content: flex-start; }
+  .toast { left: 12px; right: 12px; max-width: none; }
+  .arb-actions { grid-template-columns: 1fr; }
 }
